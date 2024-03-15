@@ -1,0 +1,29 @@
+db.Equipe.find({})
+
+db.Pilotos.find({ Equipe: "Ferrari" }).size()
+
+db.Pilotos.aggregate([{ $group: { _id: "$Equipe", total: { $sum: 1 } } }])
+
+db.Pilotos.find({ "Vitorias": { $gte: 50 } })
+
+db.Pilotos.find({}, { "Nome": 1, "Vitorias": 1 })
+
+db.Pilotos.aggregate([
+   { $group: { _id: "$Equipe", pilotos: { $push: "$Nome" } } }
+])
+
+
+db.Pilotos.aggregate([ { $group: { _id: null, totalVictories: { $sum: "$Vitorias" } } }] )
+
+db.Equipes.countDocuments({})
+
+db.Pilotos.find().sort({ Vitórias: -1 }).limit(1)
+
+db.Pilotos.aggregate([{ $group: { _id: null, avgVictories: { $avg: "$Vitorias" } } }])
+
+db.Pilotos.find().sort({ "Vitorias": -1 })
+
+
+
+
+
