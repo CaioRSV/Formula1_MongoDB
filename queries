@@ -23,7 +23,12 @@ db.Pilotos.aggregate([{ $group: { _id: null, avgVictories: { $avg: "$Vitorias" }
 
 db.Pilotos.find().sort({ "Vitorias": -1 })
 
+db.Pilotos.aggregate([ { $group: { _id: "$Equipe", pilotos: { $push: "$Nome" } } }] )
 
+db.Pilotos.find().sort({ Vitórias: -1 })
 
+db.Corridas.find().limit(2)
+
+db.Pilotos.find({ $where: "this.Podios > this.Vitorias" })
 
 
