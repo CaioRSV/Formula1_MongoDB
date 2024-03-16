@@ -1,5 +1,6 @@
 use f1
 
+db.Equipes.insertOne({"Nome": "Sauber", "Nacionalidade": "Suíça", "Ano_Fundacao": 1970, "Chefe": "Andreas Seidl", "Carros": ["C44"]})
 
 db.Equipes.insertOne({"Nome" : "Ferrari", "Nacionalidade" : "Italiana", "Ano_Fundacao": 1939, "Chefe": "Marsas", "Carros": ["SF-24", "SF-23"]})
 
@@ -9,9 +10,9 @@ db.Equipes.insertOne({"Nome": "Lotus", "Nacionalidade": "Britânica", "Ano_Funda
 
 db.Equipes.insertOne({"Nome": "Mercedes", "Nacionalidade": "Alemã", "Ano_Fundacao": 2010, "Chefe": "Toto Wolff", "Carros": ["W13", "W12"]})
 
+db.Equipes.insertOne({"Nome": "Williams", "Nacionalidade": "Britânica", "Ano_Fundacao": 1977, "Chefe": "James Vowles", "Carros": ["FW46", "FW45"]})
 
-
-
+db.Equipes.insertOne({"Nome": "Red Bull", "Nacionalidade": "Britânica", "Ano_Fundacao": 2005, "Chefe": "Christian Horner", "Carros": ["RB20", "RB19"]})
 
 db.Pilotos.insertMany([
   {"Nome": "Alonso", "Nacionalidade" : "Espanhol", "Ano_Nascimento": 1981, "Equipe": "Ferrari", "Numero_Carro" : 14, "Titulos" : 2, "Corridas": 311, "Vitorias" : 32, "Podios" : 97},
@@ -22,7 +23,7 @@ db.Pilotos.insertMany([
 ])
 
 db.Pilotos.insertMany([
-  {"Nome": "Hamilton", "Nacionalidade" : "Britânico", "Ano_Nascimento": 1985, "Equipe": "McLaren", "Numero_Carro" : 44, "Titulos" : 7, "Corridas": 275, "Vitorias" : 103, "Podios" : 175},
+  {"Nome": "James", "Nacionalidade" : "Britânico", "Ano_Nascimento": 1985, "Equipe": "McLaren", "Numero_Carro" : 42, "Titulos" : 7, "Corridas": 275, "Vitorias" : 103, "Podios" : 175},
   {"Nome": "Button", "Nacionalidade" : "Britânico", "Ano_Nascimento": 1980, "Equipe": "McLaren", "Numero_Carro" : 22, "Titulos" : 1, "Corridas": 306, "Vitorias" : 15, "Podios" : 50},
   {"Nome": "Senna", "Nacionalidade" : "Brasileiro", "Ano_Nascimento": 1960, "Equipe": "McLaren", "Numero_Carro" : 1, "Titulos" : 3, "Corridas": 162, "Vitorias" : 41, "Podios" : 80},
   {"Nome": "Prost", "Nacionalidade" : "Francês", "Ano_Nascimento": 1955, "Equipe": "McLaren", "Numero_Carro" : 2, "Titulos" : 4, "Corridas": 199, "Vitorias" : 51, "Podios" : 106}
@@ -38,16 +39,31 @@ db.Pilotos.insertMany([
   {"Nome": "Bottas", "Nacionalidade" : "Finlandês", "Ano_Nascimento": 1989, "Equipe": "Mercedes", "Numero_Carro" : 77, "Titulos" : 0, "Corridas": 168, "Vitorias" : 10, "Podios" : 60}
 ])
 
-
-
-
-db.Corridas.insertMany([
-  {"Nome": "Grande Prêmio da Espanha", "Local": "Catalunha", "Ano": 2012, "Voltas": 66, "Comprimento_Pista": "4.655 km", "Vencedor": "Fernando Alonso", "Pole_Position": "Lewis Hamilton", "Podio": ["Fernando Alonso", "Lewis Hamilton", "Kimi Räikkönen"], "Volta_Mais_Rapida": "Kimi Räikkönen"},
-  {"Nome": "Grande Prêmio do Brasil", "Local": "Interlagos", "Ano": 2014, "Voltas": 71, "Comprimento_Pista": "4.309 km", "Vencedor": "Lewis Hamilton", "Pole_Position": "Lewis Hamilton", "Podio": ["Lewis Hamilton", "Nico Rosberg", "Felipe Massa"], "Volta_Mais_Rapida": "Nico Rosberg"},
-  {"Nome": "Grande Prêmio da China", "Local": "Xangai", "Ano": 2019, "Voltas": 56, "Comprimento_Pista": "5.451 km", "Vencedor": "Lewis Hamilton", "Pole_Position": "Valtteri Bottas", "Podio": ["Lewis Hamilton", "Valtteri Bottas", "Sebastian Vettel"], "Volta_Mais_Rapida": "Lewis Hamilton"},
-  {"Nome": "Grande Prêmio de Mônaco", "Local": "Monte Carlo", "Ano": 2017, "Voltas": 78, "Comprimento_Pista": "3.337 km", "Vencedor": "Sebastian Vettel", "Pole_Position": "Kimi Räikkönen", "Podio": ["Sebastian Vettel", "Kimi Räikkönen", "Daniel Ricciardo"], "Volta_Mais_Rapida": "Kimi Räikkönen"},
-  {"Nome": "Grande Prêmio da Alemanha", "Local": "Hockenheim", "Ano": 2018, "Voltas": 67, "Comprimento_Pista": "4.574 km", "Vencedor": "Lewis Hamilton", "Pole_Position": "Lewis Hamilton", "Podio": ["Lewis Hamilton", "Valtteri Bottas", "Kimi Räikkönen"], "Volta_Mais_Rapida": "Lewis Hamilton"}
+db.Pilotos.insertMany([
+  {"Nome": "Logan", "Nacionalidade" : "Americano", "Ano_Nascimento": 2000, "Equipe": "Williams", "Numero_Carro" : 20, "Titulos" : 0, "Corridas": 29, "Vitorias" : 0, "Podios" : 3},
+  {"Nome": "Bruno", "Nacionalidade" : "Brasileiro", "Ano_Nascimento": 2001, "Equipe": "Williams", "Numero_Carro" : 26, "Titulos" : 99, "Corridas": 500, "Vitorias" : 400, "Podios" : 450},
+  {"Nome": "Caio", "Nacionalidade" : "Brasileiro", "Ano_Nascimento": 2002, "Equipe": "Williams", "Numero_Carro" : 31, "Titulos" : 89, "Corridas": 450, "Vitorias" : 250, "Podios" : 300},
+  {"Nome": "Alain", "Nacionalidade" : "Francês", "Ano_Nascimento": 1955, "Equipe": "Williams", "Numero_Carro" : 40, "Titulos" : 6, "Corridas": 326, "Vitorias" : 68, "Podios" : 159},
+  {"Nome": "Jhon", "Nacionalidade" : "Angolano", "Ano_Nascimento": 1989, "Equipe": "Williams", "Numero_Carro" : 17, "Titulos" : 0, "Corridas": 169, "Vitorias" : 1, "Podios" : 14}
 ])
 
+db.Pilotos.insertMany([
+  {"Nome": "Max Verstappen", "Nacionalidade" : "Neerlandês", "Ano_Nascimento": 1977, "Equipe": "Red Bull", "Numero_Carro" : 19, "Titulos" : 3, "Corridas": 187, "Vitorias" : 56, "Podios" : 100},
+  {"Nome": "Sergio Perez", "Nacionalidade" : "Mexicano", "Ano_Nascimento": 1990, "Equipe": "Red Bull", "Numero_Carro" : 23, "Titulos" : 0, "Corridas": 263, "Vitorias" : 6, "Podios" : 37}
+])
+
+db.Pilotos.insertMany([
+  {"Nome": "Guanyu Zhou", "Nacionalidade" : "Chinês", "Ano_Nascimento": 1999, "Equipe": "Sauber", "Numero_Carro" : 29, "Titulos" : 0, "Corridas": 46, "Vitorias" : 0, "Podios" : 0},
+  {"Nome": "Sergio Perez", "Nacionalidade" : "Finlandês", "Ano_Nascimento": 1989, "Equipe": "Sauber", "Numero_Carro" : 77, "Titulos" : 0, "Corridas": 225, "Vitorias" : 10, "Podios" : 67}
+])
+
+db.Corridas.insertMany([
+  {"Nome": "Grande Prêmio da Espanha", "Local": "Catalunha", "Ano": 2012, "Voltas": 66, "Comprimento_Pista": "4.655 km", "Vencedor": "Alonso", "Pole_Position": "Hamilton", "Podio": ["Alonso", "Hamilton", "Räikkönen"], "Volta_Mais_Rapida": "Räikkönen"},
+  {"Nome": "Grande Prêmio do Brasil", "Local": "Interlagos", "Ano": 2014, "Voltas": 71, "Comprimento_Pista": "4.309 km", "Vencedor": "Hamilton", "Pole_Position": "Hamilton", "Podio": ["Hamilton", "Rosberg", "Massa"], "Volta_Mais_Rapida": "Rosberg"},
+  {"Nome": "Grande Prêmio da China", "Local": "Xangai", "Ano": 2019, "Voltas": 56, "Comprimento_Pista": "5.451 km", "Vencedor": "Hamilton", "Pole_Position": "Bottas", "Podio": ["Hamilton", "Bottas", "Vettel"], "Volta_Mais_Rapida": "Hamilton"},
+  {"Nome": "Grande Prêmio de Mônaco", "Local": "Monte Carlo", "Ano": 2017, "Voltas": 78, "Comprimento_Pista": "3.337 km", "Vencedor": "Vettel", "Pole_Position": "Räikkönen", "Podio": ["Vettel", "Räikkönen", "Ricciardo"], "Volta_Mais_Rapida": "Räikkönen"},
+  {"Nome": "Grande Prêmio da Alemanha", "Local": "Hockenheim", "Ano": 2018, "Voltas": 67, "Comprimento_Pista": "4.574 km", "Vencedor": "Hamilton", "Pole_Position": "Hamilton", "Podio": ["Hamilton", "Bottas", "Räikkönen"], "Volta_Mais_Rapida": "Hamilton"},
+  {"Nome": "Grande Prêmio do Brasil", "Local": "São Paulo", "Ano": 2020, "Voltas": 80, "Comprimento_Pista": "4.589 km", "Vencedor": "Bruno", "Pole_Position": "Bruno", "Podio": ["Bruno", "Caio", "Logan"], "Volta_Mais_Rapida": "Max Verstappen"},
+])
 
 
