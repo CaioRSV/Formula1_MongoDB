@@ -53,3 +53,24 @@ db.Pilotos.aggregate([{ $lookup:
 db.Pilotos.findOne()
 
 db.Corridas.updateOne({ "Nome": "Grande Prêmio da China" }, { $addToSet: { "Podio" : "Caiobala"} })
+
+db.Equipes.find().pretty();
+
+db.Pilotos.find({ Nome: /^A/ });
+
+
+db.Pilotos.createIndex({ "Nome": "text" });
+db.Pilotos.find({ $text: { $search: "Hamilton" } });
+
+
+////////////////// Function:
+
+function porcentagemVitoria(piloto, pilotoCorridas) {
+    return ((piloto.Vitorias * 100) / pilotoCorridas);
+}
+
+db.Pilotos.find().forEach(function(piloto) {
+    const pilotoCorridas = 50;
+    const percentual = porcentagemVitoria(piloto, pilotoCorridas);
+    print(`${piloto.Nome} tem ${percentual}% de vitórias.`);
+});
