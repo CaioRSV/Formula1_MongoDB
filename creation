@@ -48,3 +48,6 @@ db.Corridas.insertMany([
   {"Nome": "Grande Prêmio de Mônaco", "Local": "Monte Carlo", "Ano": 2017, "Voltas": 78, "Comprimento_Pista": "3.337 km", "Vencedor": "Sebastian Vettel", "Pole_Position": "Kimi Räikkönen", "Podio": ["Sebastian Vettel", "Kimi Räikkönen", "Daniel Ricciardo"], "Volta_Mais_Rapida": "Kimi Räikkönen"},
   {"Nome": "Grande Prêmio da Alemanha", "Local": "Hockenheim", "Ano": 2018, "Voltas": 67, "Comprimento_Pista": "4.574 km", "Vencedor": "Lewis Hamilton", "Pole_Position": "Lewis Hamilton", "Podio": ["Lewis Hamilton", "Valtteri Bottas", "Kimi Räikkönen"], "Volta_Mais_Rapida": "Lewis Hamilton"}
 ])
+
+
+
