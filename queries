@@ -31,4 +31,25 @@ db.Corridas.find().limit(2)
 
 db.Pilotos.find({ $where: "this.Podios > this.Vitorias" })
 
+db.Pilotos.mapReduce(
+   function() { emit(this.Equipe, this.Vitorias); },
+   function(key, values) { return Array.sum(values); },
+   { out: "vitorias_totais" }
+)
 
+db.Corridas.find({ "Podio": { $all: ["Fernando Alonso", "Lewis Hamilton", "Kimi Räikkönen"] } })
+
+db.Pilotos.updateOne({ "Nome": "Hamilton" }, { $set: { "Nacionalidade": "Britânico" } })
+
+db.Pilotos.aggregate([{ $lookup:
+         {
+            from: "Equipe",
+            localField: "Equipe",
+            foreignField: "Nome",
+            as: "equipe_info"
+         }
+      }])
+
+db.Pilotos.findOne()
+
+db.Corridas.updateOne({ "Nome": "Grande Prêmio da China" }, { $addToSet: { "Podio" : "Caiobala"} })
