@@ -37,7 +37,7 @@ db.Pilotos.mapReduce(
    { out: "vitorias_totais" }
 )
 
-db.Corridas.find({ "Podio": { $all: ["Alonso", "=Hamilton", "=Räikkönen"] } })
+db.Corridas.find({ "Podio": { $all: ["Alonso", "Hamilton", "Räikkönen"] } })
 
 db.Pilotos.updateOne({ "Nome": "Hamilton" }, { $set: { "Nacionalidade": "Britânico" } })
 
